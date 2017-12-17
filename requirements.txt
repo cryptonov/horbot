@@ -1,2 +1,2 @@
 pytelegrambotapi
-urllib2
+requests
