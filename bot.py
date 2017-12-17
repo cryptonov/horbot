@@ -20,7 +20,7 @@ def btc(message):
 
 @bot.message_handler(content_types=['text'])
 def repeat_all_messages(message):
-   if "мотив" in message.text.lower():
+   if "мотив" in message.text.lower().replace(" ", ""):
      bot.send_message(message.chat.id,config.citatki[random.randint(0,len(config.citatki)-1)])
    if message.from_user.first_name in config.lox:
        bot.send_message(message.chat.id, "Завали ебало валет!")
