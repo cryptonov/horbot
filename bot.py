@@ -13,7 +13,6 @@ def btc(message):
    btc = req['USD']['last']
    bot.send_message(message.chat.id,"Хм... Спросим у Кери!")
    time.sleep(2)
-   print(type(message.from_user.first_name))
    bot.send_message(message.chat.id,"Ну шо {}, биток уже {}$".format(message.from_user.first_name,btc))
    bot.send_sticker(message.chat.id, "CAADAgADGQADvKLSDVBmSmGAShnkAg")
 
