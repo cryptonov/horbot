@@ -8,7 +8,7 @@ bot = telebot.TeleBot(config.token)
 def repeat_all_messages(message):
     print(message)
     if "мотив" in message.text.lower():
-      bot.send_message(message.chat.id,config.citatki[random.randint(0,len(config.citatki))])
+      bot.send_message(message.chat.id,config.citatki[random.randint(0,len(config.citatki)-1)])
     if message.from_user.first_name in config.lox:
         bot.send_message(message.chat.id, "Завали ебало валет!")
     if "парень который лидирует" in message.text.lower():
