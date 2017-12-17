@@ -11,6 +11,8 @@ def repeat_all_messages(message):
       bot.send_message(message.chat.id,config.citatki[random.randint(0,len(config.citatki))])
     if message.from_user.first_name in config.lox:
         bot.send_message(message.chat.id, "Завали ебало валет!")
+    if "парень который лидирует" in message.text.lower()
+      bot.send_message(message.chat.id,"В данный момент лидер - Андрон")
 
 
 
