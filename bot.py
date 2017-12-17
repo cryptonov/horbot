@@ -7,7 +7,7 @@ import requests
 import time
 
 bot = telebot.TeleBot(config.token)
-@bot.message_handler(regexp='биткоин|биток')
+@bot.message_handler(regexp='биткоин|биток|битку')
 def btc(message):
    req = requests.get('https://blockchain.info/ru/ticker').json()
    btc = req['USD']['last']
