@@ -28,6 +28,9 @@ def repeat_all_messages(message):
       bot.send_message(message.chat.id,"Ты шо вообще тупой? Какой беткоин?")
    if "парень который лидирует" in message.text.lower():
      bot.send_message(message.chat.id,"В данный момент лидер - Андрон")
+   if "музыка тест" in message.text.lower():
+     bot.send_voice(message.chat.id,"https://api.telegram.org/file/bot458426913:AAGSMe5Thm75vvDAHtqG95czDHKHzRqODuQ/topmuzon.com/files/music/russian/Lx24_-_Teryayu_Kontrol.mp3")
+   
    #if "/биткоин" in message.text.lower():
    #    bot.send_message(message.chat.id,"Такс такс такс, по данным Кирюхи биток щас %f $"%btc)
 
