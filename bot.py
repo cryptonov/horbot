@@ -23,31 +23,30 @@ def btc(message):
 def send_welcome(message):
     bot.reply_to(message, "Howdy, how are you doing?")
 
-@bot.message_handler(commands=['music'])
-def send_music(message):
-
-    songName = message.text[7:].replace(" ","+")
-    print(songName)
-    str = "http://mp3party.net/search?q={}".format(songName)
-    print(str)
-    if len(songName) == 0 :
-        bot.send_message(message.chat.id, "Функция находится в бете. Введите /music имя трека для поиска")
-        return
-    req = requests.get(str)
-    soup = BS(req.content,'html.parser')
-    songList = soup.find('div',{'class':'song-item'})
-    if type(songList) == type(None):
-        bot.send_message(message.chat.id,"Трек не найден. Попробуй еще раз(иногда помогает)")
-        return
-    realSong ={}
-    realSong['href'] = songList.find('a')['href']
-    realSong['name'] = songList.find('a').text
-    str = "http://mp3party.net"+realSong['href']
-    req = requests.get(str)
-    soup = BS(req.content,'html.parser')
-    link = soup.find('div',{'class','download'}).find('a')['href']
-    print(type(link))
-    bot.send_audio(message.chat.id, link,title=realSong['name'])
+#@bot.message_handler(commands=['music'])
+#def send_music(message):
+    #songName = message.text[7:].replace(" ","+")
+   # print(songName)
+  #  str = "http://mp3party.net/search?q={}".format(songName)
+   # print(str)
+  #  if len(songName) == 0 :
+  #      bot.send_message(message.chat.id, "Функция находится в бете. Введите /music имя трека для поиска")
+#        return
+ #   req = requests.get(str)
+ #   soup = BS(req.content,'html.parser')
+ #   songList = soup.find('div',{'class':'song-item'})
+  #  if type(songList) == type(None):
+ #       bot.send_message(message.chat.id,"Трек не найден. Попробуй еще раз(иногда помогает)")
+ #       return
+ #   realSong ={}
+ #   realSong['href'] = songList.find('a')['href']
+#   realSong['name'] = songList.find('a').text
+ #   str = "http://mp3party.net"+realSong['href']
+ #   req = requests.get(str)
+ #   soup = BS(req.content,'html.parser')
+ #   link = soup.find('div',{'class','download'}).find('a')['href']
+#    print(type(link))
+ #   bot.send_audio(message.chat.id, link,title=realSong['name'])
 
 
 @bot.message_handler(content_types=['text'])
