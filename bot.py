@@ -11,12 +11,14 @@ bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(regexp='биткоин|биток|битку')
 def btc(message): 
+    print(message)
     req = requests.get('https://blockchain.info/ru/ticker').json()  
     btc = req['USD']['last'] 
     bot.send_message(message.chat.id, "Хм... Спросим у Кери!")  
     time.sleep(2) 
     bot.send_message(message.chat.id, "Ну шо {}, биток уже {}$".format(message.from_user.first_name, btc)) 
     bot.send_sticker(message.chat.id, "CAADAgADGQADvKLSDVBmSmGAShnkAg")
+    
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -48,7 +50,7 @@ def send_welcome(message):
 #    print(type(link))
  #   bot.send_audio(message.chat.id, link,title=realSong['name'])
 
-print(message)
+
 @bot.message_handler(content_types=['text'])
 def repeat_all_messages(message):
 
