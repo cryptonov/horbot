@@ -51,7 +51,7 @@ def send_welcome(message):
  #   bot.send_audio(message.chat.id, link,title=realSong['name'])
 
 
-@bot.message_handler(content_types=['text'])
+@bot.message_handler(content_types=['text','sticker'])
 def repeat_all_messages(message):
     print(message)
     if "мотив" in message.text.lower().replace(" ", ""):
