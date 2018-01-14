@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup as BS
 
 bot = telebot.TeleBot(config.token)
 
-
 @bot.message_handler(regexp='биткоин|биток|битку')
 def btc(message): 
     req = requests.get('https://blockchain.info/ru/ticker').json()  
@@ -18,7 +17,6 @@ def btc(message):
     time.sleep(2) 
     bot.send_message(message.chat.id, "Ну шо {}, биток уже {}$".format(message.from_user.first_name, btc)) 
     bot.send_sticker(message.chat.id, "CAADAgADGQADvKLSDVBmSmGAShnkAg")
-    
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -51,9 +49,9 @@ def send_welcome(message):
  #   bot.send_audio(message.chat.id, link,title=realSong['name'])
 
 
-@bot.message_handler(content_types=['text','sticker'])
+@bot.message_handler(content_types=['text'])
 def repeat_all_messages(message):
-    print(message)
+
     if "мотив" in message.text.lower().replace(" ", ""):
         bot.send_message(message.chat.id, config.citatki[random.randint(0, len(config.citatki) - 1)])
     if message.from_user.first_name in config.lox:
@@ -62,7 +60,9 @@ def repeat_all_messages(message):
         bot.send_message(message.chat.id, "Ты шо вообще тупой? Какой беткоин?")
     if "парень который лидирует" in message.text.lower():
         bot.send_message(message.chat.id, "В данный момент лидер - Андрон")
-
+    if "славаукраине"||"славаукраїні" in message.text.lower().replace(" ",""):
+         bot.send_message(message.chat.id, "Героям слава!!")
+         bot.send_sticker(message.chat.id, "CAADAgADHAADMVD5DfMjhuKC0-w7Ag")
 
 
 
