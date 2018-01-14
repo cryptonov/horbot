@@ -48,7 +48,7 @@ def send_welcome(message):
 #    print(type(link))
  #   bot.send_audio(message.chat.id, link,title=realSong['name'])
 
-
+print(message)
 @bot.message_handler(content_types=['text'])
 def repeat_all_messages(message):
 
