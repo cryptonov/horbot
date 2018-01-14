@@ -63,6 +63,6 @@ def repeat_all_messages(message):
     if ("славаукраине" in message.text.lower().replace(" ","")) or ("славаукраїні" in message.text.lower().replace(" ","")):
          bot.send_message(message.chat.id, "Героям слава!!")
          bot.send_sticker(message.chat.id, "CAADAgADHAADMVD5DfMjhuKC0-w7Ag")
-
+         bot.send_audio(message.chat.id, "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/be/Anthem-of-Ukraine_Chorus_Veryovka.ogg/Anthem-of-Ukraine_Chorus_Veryovka.ogg.mp3",title="СЛАВА УКРАИНЕ")
 if __name__ == '__main__':
     bot.polling(none_stop=True)
