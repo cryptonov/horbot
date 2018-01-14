@@ -9,9 +9,9 @@ from bs4 import BeautifulSoup as BS
 
 bot = telebot.TeleBot(config.token)
 
+
 @bot.message_handler(regexp='биткоин|биток|битку')
 def btc(message): 
-    print(message)
     req = requests.get('https://blockchain.info/ru/ticker').json()  
     btc = req['USD']['last'] 
     bot.send_message(message.chat.id, "Хм... Спросим у Кери!")  
@@ -53,7 +53,7 @@ def send_welcome(message):
 
 @bot.message_handler(content_types=['text'])
 def repeat_all_messages(message):
-
+    print(message)
     if "мотив" in message.text.lower().replace(" ", ""):
         bot.send_message(message.chat.id, config.citatki[random.randint(0, len(config.citatki) - 1)])
     if message.from_user.first_name in config.lox:
