@@ -19,9 +19,11 @@ def btc(message):
     bot.send_sticker(message.chat.id, "CAADAgADGQADvKLSDVBmSmGAShnkAg")
 
 
-@bot.message_handler(commands=['start', 'help'])
+@bot.message_handler(commands=['pidor'])
 def send_welcome(message):
-    bot.reply_to(message, "Howdy, how are you doing?")
+    bot.send_message(message.chat.id, "генерирую пидора")
+    time.sleep(2)
+    bot.send_message(message.chat.id, "пидор - legkiy")
 
 #@bot.message_handler(commands=['music'])
 #def send_music(message):
