@@ -21,8 +21,8 @@ def btc(message):
 
 @bot.message_handler(commands=['pidor'])
 def send_welcome(message):
-    bot.send_message(message.chat.id, "генерирую пидора")
     time.sleep(2)
+    bot.send_message(message.chat.id, "@SublimeBot пиздит! генерирую настоящего пидора")
     bot.send_message(message.chat.id, "пидор - legkiy")
 
 #@bot.message_handler(commands=['music'])
