@@ -63,9 +63,7 @@ def repeat_all_messages(message):
     if "парень который лидирует" in message.text.lower():
         bot.send_message(message.chat.id, "В данный момент лидер - Андрон")
     if "пидор" in message.text.lower():
-        bot.send_message(message.chat.id, "генерирую пидора")
-        time.sleep(2)
-        bot.send_message(message.chat.id, "пидор - legkiy")
+        bot.send_message(message.chat.id, "пидор? пидор - legkiy!")
     if ("славаукраине" in message.text.lower().replace(" ","")) or ("славаукраїні" in message.text.lower().replace(" ","")):
          bot.send_message(message.chat.id, "Героям слава!!")
          bot.send_sticker(message.chat.id, "CAADAgADHAADMVD5DfMjhuKC0-w7Ag")
